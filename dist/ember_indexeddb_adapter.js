@@ -881,7 +881,7 @@ DS.IndexedDBAdapter = DS.Adapter.extend({
 
         transaction.oncomplete = function(t) {
           Em.run(function() {
-            resolve(serializedRecord);
+            resolve();
             db.close();
           });
         }
@@ -893,7 +893,7 @@ DS.IndexedDBAdapter = DS.Adapter.extend({
         operation.onsuccess = function(event) {
           Em.run(function() {
             db.close();
-            resolve(serializedRecord);
+            resolve();
           });
         };
 
